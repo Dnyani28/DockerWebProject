@@ -9,7 +9,7 @@ node {
    
    
 
-    stage('clone Repository') {
+    stage('compile') {
     
     sh '''
       mvn compile
