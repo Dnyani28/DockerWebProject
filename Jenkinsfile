@@ -6,15 +6,6 @@ node {
 
         checkout scm
     }
-   
-   
-
-    stage('compile') {
-    
-    sh '''
-      mvn compile
-    '''
-    }
 
     
 
