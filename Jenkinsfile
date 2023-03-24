@@ -7,15 +7,12 @@ node {
         checkout scm
     }
 
-    
+    stage('Build image') {
+        /* This builds the actual image; synonymous to
+         * docker build on the command line */
 
-    stage('package') {
-     
-     sh '''
-        mvn package
-     '''   
-    } 
-    
+        app = docker.build("dnyani28/webpage")
+    }
     
     stage('Test image') {
         /* Ideally, we would run a test framework against our image.
