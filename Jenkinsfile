@@ -1,6 +1,6 @@
 node {
     def app
-
+    }
     stage('Clone repository') {
         /* Let's make sure we have the repository cloned to our workspace */
 
@@ -13,7 +13,7 @@ node {
         /* This builds the actual image; synonymous to
          * docker build on the command line */
 
-        app = docker.build("mannam786/webpage")
+        app = docker.build("dnyani28/webpage")
     }
 
     
@@ -34,13 +34,11 @@ node {
         
    stage('RunningImagesInDocker ') {
        sh '''
-         docker pull mannam786/webpage:latest
-         docker run -d -p 2222:80 mannam786/webpage
+         docker pull dnyani28/webpage:latest
+         docker run -d -p 2222:80 dnyani28/webpage
        
        '''
          }
-        
-  
-   
 }
+    
 
